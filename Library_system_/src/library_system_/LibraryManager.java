@@ -78,4 +78,25 @@ public class LibraryManager implements Searchable {
             System.out.println(book);
         }
     }
+    // Display all borrowed books
+    
+    public void displayBorrowedBooks() {
+        boolean found = false;
+
+        for (Loan loan : loans) {
+            if (!loan.isReturned()) {
+                System.out.println(
+                    "Book: " + loan.getBook().getTitle() +
+                    " | Borrowed by: " + loan.getMember().getName() +
+                    " | Date: " + loan.getBorrowDate()
+                );
+                found = true;
+            }
+        }
+
+        if (!found) {
+            System.out.println("No borrowed books at the moment.");
+        }
+    }
+
 }
