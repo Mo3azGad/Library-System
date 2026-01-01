@@ -53,8 +53,13 @@ public class Loan {
     }
     
     public long getBorrowedDays() {
-    return ChronoUnit.DAYS.between(borrowDate, LocalDate.now());
-}
+        return ChronoUnit.DAYS.between(borrowDate, LocalDate.now());
+    }
+    
+    public void setBorrowDate(LocalDate borrowDate) {
+        this.borrowDate = borrowDate;
+    }
+
 
     @Override
     public String toString() {

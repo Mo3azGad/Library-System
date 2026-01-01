@@ -10,7 +10,8 @@ import java.util.List;
 public class LibraryManager implements Searchable {
 
     private List<Book> books;
-    private List<Loan> loans;
+     List<Loan> loans;
+
 
     public LibraryManager() {
         books = new ArrayList<>();
