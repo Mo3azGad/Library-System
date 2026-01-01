@@ -88,7 +88,7 @@ public class LibraryManager implements Searchable {
                 System.out.println(
                     "Book: " + loan.getBook().getTitle() +
                     " | Borrowed by: " + loan.getMember().getName() +
-                    " | Date: " + loan.getBorrowDate()
+                    " | Borrow date: " + loan.getBorrowDate()
                 );
                 found = true;
             }
@@ -98,5 +98,8 @@ public class LibraryManager implements Searchable {
             System.out.println("No borrowed books at the moment.");
         }
     }
+    
+
+
 
 }

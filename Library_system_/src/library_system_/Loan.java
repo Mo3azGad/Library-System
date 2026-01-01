@@ -1,6 +1,7 @@
 package library_system_;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 /**
  * Represents a book loan in the library system.
@@ -11,6 +12,7 @@ public class Loan {
     private Member member;
     private LocalDate borrowDate;
     private LocalDate returnDate;
+
 
     /**
      * Constructor to create a Loan when a book is borrowed.
@@ -49,6 +51,10 @@ public class Loan {
     public boolean isReturned() {
         return returnDate != null;
     }
+    
+    public long getBorrowedDays() {
+    return ChronoUnit.DAYS.between(borrowDate, LocalDate.now());
+}
 
     @Override
     public String toString() {
