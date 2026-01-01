@@ -59,4 +59,18 @@ public class LoanTest {
 
         assertEquals(LocalDate.now(), loan.getBorrowDate());
     }
+    
+    @Test
+    public void testBorrowedDaysCalculation() throws InterruptedException {
+        Book book = new Book(5, "Algorithms", "CLRS");
+        Member member = new Member(5, "Mona");
+
+        Loan loan = new Loan(book, member);
+
+        // Borrow date should be today, so borrowed days = 0
+        long borrowedDays = loan.getBorrowedDays();
+
+        assertEquals(0, borrowedDays);
+    }
+
 }
