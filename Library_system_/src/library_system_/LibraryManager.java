@@ -99,6 +99,17 @@ public class LibraryManager implements Searchable {
         }
     }
     
+    public double calculateLateFee(int bookId) {
+        for (Loan loan : loans) {
+            if (loan.getBook().getId() == bookId && !loan.isReturned()) {
+                long days = loan.getBorrowedDays();
+                if (days > 7) { // سماح أسبوع
+                    return loan.getMember().calculateFee((int)(days - 7));
+                }
+            }
+        }
+        return 0.0;
+    }
 
 
 
