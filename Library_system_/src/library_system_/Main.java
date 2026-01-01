@@ -26,6 +26,7 @@ public class Main {
             System.out.println("1. Display all books");
             System.out.println("2. Borrow book");
             System.out.println("3. Return book");
+            System.out.println("4. Display borrowed books");
             System.out.println("0. Exit");
             System.out.print("Enter your choice: ");
 
@@ -49,10 +50,16 @@ public class Main {
                     boolean returned = library.returnBook(returnId);
                     System.out.println(returned ? "Book returned successfully." : "Return failed.");
                     break;
+                    
+                case 4:
+                    library.displayBorrowedBooks();
+                    break;
+
 
                 case 0:
                     System.out.println("Exiting system...");
                     break;
+                    
 
                 default:
                     System.out.println("Invalid choice!");
